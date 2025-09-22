@@ -1,0 +1,80 @@
+.header {
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  box-sizing: border-box;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+}
+
+.institution-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-body);
+  margin: 0;
+  text-transform: capitalize;
+  width: 520px;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  object-fit: cover;
+}
+
+.greeting,
+.user-name,
+.user-surname {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-body);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-body);
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-body);
+}

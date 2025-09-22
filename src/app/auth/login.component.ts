@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ButtonComponent } from '../shared/components/button/button.component';
 import { InputComponent } from '../shared/components/input/input.component';
 
@@ -20,7 +21,7 @@ export class LoginComponent {
   readonly logoMask = 'http://localhost:3845/assets/763e1325270a2305031eb00517a5d01bb70c7199.svg';
   readonly logoImage = 'http://localhost:3845/assets/6eb1e6883a655c523c70cfc4ccc7a96adf1eb55e.svg';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private readonly fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       staffNumber: ['', [Validators.required]],
       pin: ['', [Validators.required]]
@@ -29,11 +30,8 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      const { staffNumber, pin } = this.loginForm.value;
-      console.log('Login attempt:', { staffNumber, pin });
-      // Handle login logic here
+      this.router.navigate(['/dashboard']);
     } else {
-      console.log('Form is invalid');
       this.loginForm.markAllAsTouched();
     }
   }

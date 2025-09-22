@@ -1,0 +1,48 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <!-- Logo Section -->
+  <div class="sidebar-header">
+    <div class="logo-container">
+      <img src="http://localhost:3845/assets/6f19d3c87756fb2c8643591b92d7e46b0a641073.png" alt="Logo" class="logo">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Navigation Section -->
+  <div class="navigation">
+    <!-- Toggle Button -->
+    <button class="toggle-btn" (click)="onToggle()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" [class.rotated]="isCollapsed">
+        <polyline points="11,17 6,12 11,7" stroke="currentColor" stroke-width="2"/>
+        <polyline points="18,17 13,12 18,7" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </button>
+    <div class="nav-item" 
+         *ngFor="let item of menuItems" 
+         [class.active]="item.active"
+         [routerLink]="item.route">
+      <i [attr.data-feather]="item.icon" class="nav-icon"></i>
+      <span class="nav-label" *ngIf="!isCollapsed">{{ item.label }}</span>
+    </div>
+  </div>
+
+  <!-- Settings Section -->
+  <div class="settings-section">
+    <div class="section-title" *ngIf="!isCollapsed">SETTINGS</div>
+    <div class="nav-item" *ngFor="let item of settingsItems" [routerLink]="item.route">
+      <i [attr.data-feather]="item.icon" class="nav-icon"></i>
+      <span class="nav-label" *ngIf="!isCollapsed">{{ item.label }}</span>
+      <i *ngIf="item.icon === 'settings' && !isCollapsed" data-feather="chevron-right" class="chevron"></i>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Footer Section -->
+  <div class="sidebar-footer">
+    <div class="nav-item logout">
+      <i data-feather="power" class="nav-icon"></i>
+      <span class="nav-label" *ngIf="!isCollapsed">Log Out</span>
+    </div>
+  </div>
+</div>
