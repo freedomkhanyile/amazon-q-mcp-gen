@@ -1,0 +1,62 @@
+// Bootstrap variable overrides
+$primary: #1fb6ec;
+$secondary: #e42b2a;
+$body-color: #605e5c;
+$font-family-base: 'Roboto', sans-serif;
+
+// Import Bootstrap after variable overrides
+@import 'bootstrap/scss/bootstrap';
+
+// Design tokens from Figma
+:root {
+  // Colors
+  --color-primary: #1fb6ec;
+  --color-secondary: #e42b2a;
+  --color-black: #000000;
+  --color-heading: #000000;
+  --color-body: #605e5c;
+  --color-white: #ffffff;
+  
+  // Typography
+  --font-primary: 'Roboto', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  
+  // Font sizes
+  --font-size-heading-1: 30px;
+  --font-size-headline-large: 32px;
+  --font-size-title-medium: 16px;
+  --font-size-label-large: 14px;
+  --font-size-button: 12px;
+  
+  // Line heights
+  --line-height-heading-1: 100%;
+  --line-height-headline-large: 40px;
+  --line-height-title-medium: 24px;
+  --line-height-label-large: 20px;
+  --line-height-button: 100%;
+  
+  // Spacing
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 28px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 60px;
+  
+  // Border radius
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+}
+
+// Global styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  color: var(--color-body);
+}

@@ -1,0 +1,60 @@
+<div class="login-container">
+  <!-- Background Image -->
+  <div class="background-image" [style.background-image]="'url(' + backgroundImage + ')'"></div>
+  
+  <!-- Overlay -->
+  <div class="overlay"></div>
+  
+  <!-- Logo and Welcome Section -->
+  <div class="welcome-section">
+    <div class="logo-container">
+      <div class="logo-clip">
+        <img [src]="logoImage" alt="Logo" class="logo-image" />
+      </div>
+    </div>
+    
+    <div class="welcome-text">
+      <h1 class="welcome-title">Exam Management Insights</h1>
+      <p class="welcome-subtitle">Welcome to the Exam Management Insights.</p>
+    </div>
+  </div>
+  
+  <!-- Login Form Section -->
+  <div class="form-section">
+    <div class="login-card">
+      <h2 class="login-title">Log In</h2>
+      
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <app-input
+          label="Staff Number*"
+          type="text"
+          formControlName="staffNumber"
+          [required]="true">
+        </app-input>
+        
+        <app-input
+          label="Pin*"
+          type="password"
+          formControlName="pin"
+          [required]="true">
+        </app-input>
+        
+        <app-button
+          label="SUBMIT"
+          variant="tertiary"
+          [fullWidth]="true"
+          (onClick)="onSubmit()">
+        </app-button>
+      </form>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer-text">
+      <p class="copyright">© 20XX Adapt IT Holdings Limited. All Rights Reserved.</p>
+      <p class="terms">
+        By continuing, you agree to accept our 
+        <span class="terms-link">Privacy Policy & Terms of Service</span>
+      </p>
+    </div>
+  </div>
+</div>
