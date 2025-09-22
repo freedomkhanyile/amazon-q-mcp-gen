@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 interface MenuItem {
   icon: string;
@@ -38,7 +38,13 @@ export class SidebarComponent {
     { icon: 'settings', label: 'Settings', route: '/dashboard/settings' }
   ];
 
+  constructor(private router: Router) {}
+
   onToggle(): void {
     this.toggleSidebar.emit();
+  }
+
+  onLogout(): void {
+    this.router.navigate(['/auth/login']);
   }
 }

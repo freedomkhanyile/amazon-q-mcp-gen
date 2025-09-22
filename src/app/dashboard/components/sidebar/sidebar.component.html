@@ -40,7 +40,7 @@
 
   <!-- Footer Section -->
   <div class="sidebar-footer">
-    <div class="nav-item logout">
+    <div class="nav-item logout" (click)="onLogout()">
       <i data-feather="power" class="nav-icon"></i>
       <span class="nav-label" *ngIf="!isCollapsed">Log Out</span>
     </div>
