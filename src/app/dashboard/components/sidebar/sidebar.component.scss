@@ -23,13 +23,16 @@
   height: 134px;
   background-color: var(--color-white);
   border-radius: 10px;
+  overflow: clip;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+
   .collapsed & {
     width: 32px;
     height: 32px;
+    border-radius: 10px;
   }
 }
 
@@ -62,7 +65,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.28px;
@@ -112,7 +115,7 @@
 }
 
 .section-title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10px;
   font-weight: 500;
   color: var(--color-white);
@@ -130,7 +133,7 @@
 .toggle-btn {
   position: absolute;
   right: -14px;
-  top: 243px;
+  top: 168px;
   width: 28px;
   height: 28px;
   background-color: var(--color-white);
@@ -142,6 +145,11 @@
   cursor: pointer;
   padding: 6px;
   z-index: 10;
+  transition: top 0.3s ease;
+
+  .collapsed & {
+    top: 66px;
+  }
 
   svg {
     width: 16px;
@@ -163,7 +171,7 @@
     position: fixed;
     z-index: 1000;
     transform: translateX(-100%);
-    
+
     &:not(.collapsed) {
       transform: translateX(0);
     }
